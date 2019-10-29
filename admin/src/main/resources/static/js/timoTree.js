@@ -67,7 +67,7 @@
                 $(document).scrollTop(tNode.offset().top-self.options.scrollTop);
 
             }
-            
+
             function onExpand(event, treeId, treeNode) {
                 var tNode = $("[tree-id='"+treeNode.id+"']");
                 self.expandChild(tNode, true);
@@ -77,7 +77,7 @@
                 var tNode = $("[tree-id='"+treeNode.id+"']");
                 self.expandChild(tNode, false);
             }
-            
+
             function addHoverDom(treeId, treeNode){
                 var node = $("#" + treeNode.tId + "_span");
                 if (treeNode.editNameFlag || $("#addBtn_"+treeNode.tId).length>0) return;
@@ -93,11 +93,11 @@
                     return false;
                 });
             }
-            
+
             function removeHoverDom(treeId, treeNode) {
                 $("#addBtn_"+treeNode.tId).unbind().remove();
             }
-            
+
             function beforeEditName(treeId, treeNode) {
                 var trNode = $("[tree-id='"+ treeNode.id +"']");
                 var edit = trNode.find(".popup-edit");
@@ -256,7 +256,7 @@
             tree.click(function(){
                 var node = $(this);
                 $.get(node.data('url'),function(result){
-                    //if(result.data.length > 0){
+                    //if(result.data.length > fontawesome){
                         // 显示定位悬浮选择器
                         self.position(node);
                         // zTree传递列表数据

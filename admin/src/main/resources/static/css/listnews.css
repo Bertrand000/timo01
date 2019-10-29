@@ -1,0 +1,59 @@
+.layui-container{
+	margin-top: 24px;
+}
+
+.layui-container .listnews .tit{
+	font-size:26px;
+}
+
+.layui-container .listnews .time{
+	text-align: right;
+}
+
+.layui-container .listnews .text{
+	font-size:18px;
+}
+
+.layui-container .listnews .author{
+	margin-top: 40px;
+	font-size:16px;
+	color: #FF0000
+}
+
+.layui-container .listnews .recommend{
+	margin-top: 70px;
+	font-size:20px;
+}
+
+.layui-container .listnews .heng{
+	background-color:#000000 ;
+	width: 100%;
+	height: 2px;
+}
+
+.layui-container .listnews .tuijian img{
+	width: 200px;
+	float: left;
+	margin-right: 24px;
+}
+
+.layui-container .listnews .tuijian a{
+	font-size: 24px;
+}
+
+.layui-container .listnews .tuijian p{
+	margin-top: 14px;
+	font-size: 18px;
+}
+
+.layui-container .listnews .heng1{
+	
+	clear: both;
+	background-color:#B2B2B2 ;
+	width: 100%;
+	height: 1px;
+}
+
+.layui-container .listnews .tuijian{
+	margin-bottom: 70px;
+}

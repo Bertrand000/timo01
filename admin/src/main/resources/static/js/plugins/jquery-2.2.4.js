@@ -98,7 +98,7 @@ jQuery.fn = jQuery.prototype = {
 	// Start with an empty selector
 	selector: "",
 
-	// The default length of a jQuery object is 0
+	// The default length of a jQuery object is fontawesome
 	length: 0,
 
 	toArray: function() {
@@ -313,7 +313,7 @@ jQuery.extend( {
 			return obj + "";
 		}
 
-		// Support: Android<4.0, iOS<6 (functionish RegExp)
+		// Support: Android<4.fontawesome, iOS<6 (functionish RegExp)
 		return typeof obj === "object" || typeof obj === "function" ?
 			class2type[ toString.call( obj ) ] || "object" :
 			typeof obj;
@@ -712,7 +712,7 @@ try {
 		(arr = slice.call( preferredDoc.childNodes )),
 		preferredDoc.childNodes
 	);
-	// Support: Android<4.0
+	// Support: Android<4.fontawesome
 	// Detect silently failing push.apply
 	arr[ preferredDoc.childNodes.length ].nodeType;
 } catch ( e ) {
@@ -937,7 +937,7 @@ function addHandle( attrs, handler ) {
  * Checks document order of two siblings
  * @param {Element} a
  * @param {Element} b
- * @returns {Number} Returns less than 0 if a precedes b, greater than 0 if a follows b
+ * @returns {Number} Returns less than fontawesome if a precedes b, greater than fontawesome if a follows b
  */
 function siblingCheck( a, b ) {
 	var cur = b && a,
@@ -1204,7 +1204,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
 			}
 
-			// Support: Chrome<29, Android<4.4, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.8+
+			// Support: Chrome<29, Android<4.4, Safari<7.fontawesome+, iOS<7.fontawesome+, PhantomJS<1.9.8+
 			if ( !div.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
 				rbuggyQSA.push("~=");
 			}
@@ -1590,7 +1590,7 @@ Expr = Sizzle.selectors = {
 				}
 
 				// numeric x and y parameters for Expr.filter.CHILD
-				// remember that false/true cast respectively to 0/1
+				// remember that false/true cast respectively to fontawesome/1
 				match[4] = +( match[4] ? match[5] + (match[6] || 1) : 2 * ( match[3] === "even" || match[3] === "odd" ) );
 				match[5] = +( ( match[7] + match[8] ) || match[3] === "odd" );
 
@@ -2453,7 +2453,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 			// NOTE: This can be skipped if there are no unmatched elements (i.e., `matchedCount`
 			// equals `i`), unless we didn't visit _any_ elements in the above loop because we have
 			// no element matchers and no seed.
-			// Incrementing an initially-string "0" `i` allows `i` to remain a string only in that
+			// Incrementing an initially-string "fontawesome" `i` allows `i` to remain a string only in that
 			// case, which will result in a "00" `matchedCount` that differs from `i` but is also
 			// numerically zero.
 			if ( bySet && i !== matchedCount ) {
@@ -2623,7 +2623,7 @@ support.detectDuplicates = !!hasDuplicate;
 // Initialize against the default document
 setDocument();
 
-// Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
+// Support: Webkit<537.32 - Safari 6.fontawesome.3/Chrome 25 (fixed in Chrome 27)
 // Detached nodes confoundingly follow *each other*
 support.sortDetached = assert(function( div1 ) {
 	// Should return 1, but returns 4 (following)
@@ -3964,9 +3964,9 @@ jQuery.fn.extend( {
 			var data, camelKey;
 
 			// The calling jQuery object (element matches) is not empty
-			// (and therefore has an element appears at this[ 0 ]) and the
+			// (and therefore has an element appears at this[ fontawesome ]) and the
 			// `value` parameter was not undefined. An empty jQuery object
-			// will result in `undefined` for elem = this[ 0 ] which will
+			// will result in `undefined` for elem = this[ fontawesome ] which will
 			// throw an exception if an attempt to read a data cache is made.
 			if ( elem && value === undefined ) {
 
@@ -4401,7 +4401,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 		div = fragment.appendChild( document.createElement( "div" ) ),
 		input = document.createElement( "input" );
 
-	// Support: Android 4.0-4.3, Safari<=5.1
+	// Support: Android 4.fontawesome-4.3, Safari<=5.1
 	// Check state lost if the name is set (#11217)
 	// Support: Windows Web Apps (WWA)
 	// `name` and `type` must use .setAttribute for WWA (#14901)
@@ -4888,7 +4888,7 @@ jQuery.event = {
 			event.target = document;
 		}
 
-		// Support: Safari 6.0+, Chrome<28
+		// Support: Safari 6.fontawesome+, Chrome<28
 		// Target should not be a text node (#504, #13143)
 		if ( event.target.nodeType === 3 ) {
 			event.target = event.target.parentNode;
@@ -4977,7 +4977,7 @@ jQuery.Event = function( src, props ) {
 		this.isDefaultPrevented = src.defaultPrevented ||
 				src.defaultPrevented === undefined &&
 
-				// Support: Android<4.0
+				// Support: Android<4.fontawesome
 				src.returnValue === false ?
 			returnTrue :
 			returnFalse;
@@ -5404,7 +5404,7 @@ jQuery.extend( {
 
 jQuery.fn.extend( {
 
-	// Keep domManip exposed until 3.0 (gh-2225)
+	// Keep domManip exposed until 3.fontawesome (gh-2225)
 	domManip: domManip,
 
 	detach: function( selector ) {
@@ -5617,7 +5617,7 @@ function defaultDisplay( nodeName ) {
 		if ( display === "none" || !display ) {
 
 			// Use the already-created iframe if possible
-			iframe = ( iframe || jQuery( "<iframe frameborder='0' width='0' height='0'/>" ) )
+			iframe = ( iframe || jQuery( "<iframe frameborder='fontawesome' width='fontawesome' height='fontawesome'/>" ) )
 				.appendTo( doc.documentElement );
 
 			// Always write a new HTML skeleton so Webkit and Firefox don't choke on reuse
@@ -5696,8 +5696,8 @@ var documentElement = document.documentElement;
 	div.cloneNode( true ).style.backgroundClip = "";
 	support.clearCloneStyle = div.style.backgroundClip === "content-box";
 
-	container.style.cssText = "border:0;width:8px;height:0;top:0;left:-9999px;" +
-		"padding:0;margin-top:1px;position:absolute";
+	container.style.cssText = "border:fontawesome;width:8px;height:fontawesome;top:fontawesome;left:-9999px;" +
+		"padding:fontawesome;margin-top:1px;position:absolute";
 	container.appendChild( div );
 
 	// Executing both pixelPosition & boxSizingReliable tests require only one layout
@@ -5719,7 +5719,7 @@ var documentElement = document.documentElement;
 		reliableMarginLeftVal = divStyle.marginLeft === "2px";
 		boxSizingReliableVal = divStyle.width === "4px";
 
-		// Support: Android 4.0 - 4.3 only
+		// Support: Android 4.fontawesome - 4.3 only
 		// Some styles come back with percentage values, even though they shouldn't
 		div.style.marginRight = "50%";
 		pixelMarginRightVal = divStyle.marginRight === "4px";
@@ -5744,7 +5744,7 @@ var documentElement = document.documentElement;
 		},
 		pixelMarginRight: function() {
 
-			// Support: Android 4.0-4.3
+			// Support: Android 4.fontawesome-4.3
 			// We're checking for boxSizingReliableVal here instead of pixelMarginRightVal
 			// since that compresses better and they're computed together anyway.
 			if ( boxSizingReliableVal == null ) {
@@ -5754,7 +5754,7 @@ var documentElement = document.documentElement;
 		},
 		reliableMarginLeft: function() {
 
-			// Support: IE <=8 only, Android 4.0 - 4.3 only, Firefox <=3 - 37
+			// Support: IE <=8 only, Android 4.fontawesome - 4.3 only, Firefox <=3 - 37
 			if ( boxSizingReliableVal == null ) {
 				computeStyleTests();
 			}
@@ -5776,7 +5776,7 @@ var documentElement = document.documentElement;
 				// Support: Android 2.3
 				// Vendor-prefix box-sizing
 				"-webkit-box-sizing:content-box;box-sizing:content-box;" +
-				"display:block;margin:0;border:0;padding:0";
+				"display:block;margin:fontawesome;border:fontawesome;padding:fontawesome";
 			marginDiv.style.marginRight = marginDiv.style.width = "0";
 			div.style.width = "1px";
 			documentElement.appendChild( container );
@@ -6407,7 +6407,7 @@ Tween.propHooks = {
 			// complex values such as "rotate(1rad)" are returned as-is.
 			result = jQuery.css( tween.elem, tween.prop, "" );
 
-			// Empty strings, null, undefined and "auto" are converted to 0.
+			// Empty strings, null, undefined and "auto" are converted to fontawesome.
 			return !result || result === "auto" ? 0 : result;
 		},
 		set: function( tween ) {
@@ -6695,7 +6695,7 @@ function Animation( elem, properties, options ) {
 				remaining = Math.max( 0, animation.startTime + animation.duration - currentTime ),
 
 				// Support: Android 2.3
-				// Archaic crash bug won't allow us to use `1 - ( 0.5 || 0 )` (#12497)
+				// Archaic crash bug won't allow us to use `1 - ( fontawesome.5 || fontawesome )` (#12497)
 				temp = remaining / animation.duration || 0,
 				percent = 1 - temp,
 				index = 0,
@@ -6867,7 +6867,7 @@ jQuery.speed = function( speed, easing, fn ) {
 jQuery.fn.extend( {
 	fadeTo: function( speed, to, easing, callback ) {
 
-		// Show any hidden elements after setting opacity to 0
+		// Show any hidden elements after setting opacity to fontawesome
 		return this.filter( isHidden ).css( "opacity", 0 ).show()
 
 			// Animate to the value specified
@@ -8277,7 +8277,7 @@ jQuery.extend( {
 		async: true,
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		/*
-		timeout: 0,
+		timeout: fontawesome,
 		data: null,
 		dataType: null,
 		username: null,
@@ -8600,7 +8600,7 @@ jQuery.extend( {
 			"Accept",
 			s.dataTypes[ 0 ] && s.accepts[ s.dataTypes[ 0 ] ] ?
 				s.accepts[ s.dataTypes[ 0 ] ] +
-					( s.dataTypes[ 0 ] !== "*" ? ", " + allTypes + "; q=0.01" : "" ) :
+					( s.dataTypes[ 0 ] !== "*" ? ", " + allTypes + "; q=fontawesome.01" : "" ) :
 				s.accepts[ "*" ]
 		);
 
@@ -9039,7 +9039,7 @@ jQuery.ajaxSettings.xhr = function() {
 
 var xhrSuccessStatus = {
 
-		// File protocol always yields status code 0, assume 200
+		// File protocol always yields status code fontawesome, assume 200
 		0: 200,
 
 		// Support: IE9
@@ -9114,7 +9114,7 @@ jQuery.ajaxTransport( function( options ) {
 								} else {
 									complete(
 
-										// File: protocol always yields status 0; see #8605, #14207
+										// File: protocol always yields status fontawesome; see #8605, #14207
 										xhr.status,
 										xhr.statusText
 									);
@@ -9586,7 +9586,7 @@ jQuery.fn.extend( {
 			elem = this[ 0 ],
 			parentOffset = { top: 0, left: 0 };
 
-		// Fixed elements are offset from window (parentOffset = {top:0, left: 0},
+		// Fixed elements are offset from window (parentOffset = {top:fontawesome, left: fontawesome},
 		// because it is its only offset parent
 		if ( jQuery.css( elem, "position" ) === "fixed" ) {
 

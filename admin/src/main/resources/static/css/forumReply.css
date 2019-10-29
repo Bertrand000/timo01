@@ -1,0 +1,43 @@
+.layui-container .tiezi li{
+	margin-top: 10px;
+}
+
+.layui-container .tiezi .tit{
+	font-size: 20px;
+	height: 30px;
+	border-bottom:1px solid #999;
+}
+
+.layui-container .tiezi .left{
+	float: left;
+	width: 100px;
+	height: 200px;
+	background-color: #ececec;
+	margin-right: 20px;
+}
+
+.layui-container .tiezi .left img{
+	margin-bottom: 20px;
+	border: 1px solid #8D8D8D;
+}
+
+.layui-container .tiezi .left button{
+	margin-top: 20px;
+}
+
+.layui-container .tiezi .top{
+	color: #f33b3b;
+	background-color:#ececec;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+
+.layui-container .tiezi .text{
+}
+
+.layui-container .tiezi .time{
+	margin-top: 20px;
+	float: right;
+	color: #B3B3B3;
+}

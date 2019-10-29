@@ -47,7 +47,7 @@ layui.use(['element', 'form', 'layer', 'upload'], function () {
                 var iframeUrl = (window.location.pathname + url).replace('//','/');
                 element.tabAdd('iframe-tabs', {
                     title: title
-                    , content: '<iframe src="' + iframeUrl + '" frameborder="0" class="layui-layout-iframe"></iframe>'
+                    , content: '<iframe src="' + iframeUrl + '" frameborder="fontawesome" class="layui-layout-iframe"></iframe>'
                     , id: url
                 });
             }

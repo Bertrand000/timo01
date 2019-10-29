@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/template :: header(~{::title},~{::link},~{::style})">
+</head>
+<body>
+    <div class="layui-form timo-compile">
+    <form th:action="@{/gateway/memu/save}">
+        <input type="hidden" name="id" th:if="${memu}" th:value="${memu.id}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜单名</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="name" placeholder="请输入菜单名" th:value="${memu?.name}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜单图标</label>
+            <div class="layui-input-inline">
+                <input readonly="value" class="layui-input" type="text" name="imageUrl" id="imageUrl" placeholder="请上传图片" th:value="${memu?.imageUrl}" style="cursor:no-drop">
+            </div>
+            <button type="button" class="layui-btn" id="cover_btn">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">父级菜单id</label>
+            <div class="layui-input-block">
+                <select name="pid" lay-verify="required">
+                    <option th:each="one:${oneMemu}" th:value="${one.id}" th:text="${one.pname}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">别名</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="rick_name" placeholder="请输入别名" th:value="${memu?.rickName}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序序号</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="sort" placeholder="请输入排序序号" th:value="${memu?.sort}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">二级菜单样式</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="style" placeholder="请输入二级菜单样式" th:value="${memu?.style}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">二级菜单属性</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="attribute" placeholder="请输入二级菜单属性" th:value="${memu?.attribute}">
+            </div>
+        </div>
+        <div class="layui-form-item timo-finally">
+            <button class="layui-btn ajax-submit"><i class="fa fa-check-circle"></i> 保存</button>
+            <button class="layui-btn btn-secondary close-popup"><i class="fa fa-times-circle"></i> 关闭</button>
+        </div>
+    </form>
+</div>
+<script th:replace="/common/template :: script"></script>
+<script type="text/javascript" th:inline="javascript">
+    var contextpath = [[@{/}]]
+        layui.use('upload', function(){
+            var upload = layui.upload;
+            //执行实例
+            var uploadInst2 = upload.render({
+                elem: '#cover_btn' //绑定元素
+                ,url: contextpath + '/gateway/video/uploadImage' //上传接口
+                ,done: function(res){
+                    layer.msg(res.msg)
+                    if(res.status != 0) {
+                        document.getElementById("imageUrl").value =res.data
+                    }
+                }
+                ,error: function(){
+                    //请求异常回调
+                }
+            });
+        });
+</script>
+</body>
+</html>

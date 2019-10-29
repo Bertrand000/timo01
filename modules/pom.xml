@@ -16,5 +16,8 @@
 
     <modules>
         <module>system</module>
+        <module>newsManage</module>
+        <module>gatway</module>
+        <module>gateway</module>
     </modules>
 </project>

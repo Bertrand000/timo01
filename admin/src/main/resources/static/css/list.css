@@ -1,0 +1,41 @@
+.nav a.b1{border-bottom:3px solid #fff;color:#686868;}
+.nav a.b2{border-bottom:3px solid #f3782a;color:#f3782a;}
+
+
+.layui-container ul li{
+	margin-top: 10px;
+}
+
+.layui-container .Recommend{
+	font-size: 24px;
+}
+
+.layui-container .Recommend a{
+	font-size: 18px;
+	float: right;
+}
+
+.layui-container .news img{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.layui-container .news .text{
+	font-size: 14px;
+	text-align: center;
+}
+
+.layui-container .video .news i{
+	float: left;
+	position: relative;
+	top: 3px;
+	color: red;
+}
+
+.layui-container .video{
+	margin-top: 40px;
+}
+
+.layui-container .video .text{
+	font-size: 16px;
+}

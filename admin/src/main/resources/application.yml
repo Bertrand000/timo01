@@ -1,6 +1,19 @@
 ### 服务器配置
 server:
   port: 8080
+  servlet:
+    context-path: /football_cms
+
+### oss对象存储服务配置
+oss:
+    # ENDPOINT是访问OSS的域名。如果您已经在OSS的控制台上 创建了Bucket，请在控制台上查看域名。
+    endpoint: oss-cn-beijing.aliyuncs.com
+    # ACCESS_KEY_ID和ACCESS_KEY_SECRET是OSS的访问密钥，您可以在控制台上创建和查看
+    # 注意：ACCESS_KEY_ID和ACCESS_KEY_SECRET前后都没有空格，从控制台复制时请检查并去除多余的空格。
+    access-key-id: LTAIMeJoEYlgMeZ1
+    access-key-secret: ZRkmDjAtktnysFhzkqw4mGl5Rdyk2Z
+    # 对象存储实例名称
+    bucket-name: demo-chenmoumou-sta
 
 ### TIMO配置
 project:
@@ -17,11 +30,22 @@ spring:
 ## 数据库配置
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/timo?useSSL=false&characterEncoding=utf-8
+    url: jdbc:mysql://106.12.22.115/timo?useSSL=false&characterEncoding=utf-8
     username: root
-    password: root
+    password: 123456
+    # 数据源配置防止断开
+    datasource:
+      type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      pool-name: KevinHikariPool
+      maximum-pool-size: 12
+      connection-timeout: 60000
+      minimum-idle: 10
+      idle-timeout: 500000
+      max-lifetime: 30000
+      connection-test-query: SELECT 1
 
-## jpa配置
+  ## jpa配置
   jpa:
     show-sql: true
     hibernate:
@@ -35,7 +59,7 @@ spring:
   thymeleaf:
     prefix: classpath:/templates
     suffix: .html
-    mode: HTML
+    mode: LEGACYHTML5
     encoding: utf-8
     servlet.content-type: text/html
     cache: false

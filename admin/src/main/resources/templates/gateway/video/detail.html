@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/template :: header(~{::title},~{::link},~{::style})">
+</head>
+<body>
+    <div class="timo-detail-page">
+        <div class="timo-detail-title">基本信息</div>
+        <table class="layui-table timo-detail-table">
+            <colgroup>
+                <col width="100px"><col>
+                <col width="100px"><col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>主键ID</th>
+                    <td th:text="${video.id}"></td>
+                    <th>标题</th>
+                    <td th:text="${video.title}"></td>
+                </tr>
+                <tr>
+                    <th>视频资源定位</th>
+                    <td th:text="${video.uri}"></td>
+                    <th>所属菜单</th>
+                    <td th:text="${video.pid}"></td>
+                </tr>
+
+                <tr>
+                    <th>封面资源定位</th>
+                    <td th:text="${video.cover}"></td>
+
+                    <th>排序序号</th>
+                    <td th:text="${video.sort}"></td>
+                </tr>
+                <tr>
+                    <th>创建者</th>
+                    <td th:text="${video.createBy?.nickname}"></td>
+                    <th>创建时间</th>
+                    <td th:text="${#dates.format(video.createDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                </tr>
+                <tr>
+                    <th>视频类型</th>
+                    <td th:text="${video.type}"></td>
+                    <th>备注</th>
+                    <td th:text="${video.remark}" colspan="3"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<script th:replace="/common/template :: script"></script>
+</body>
+</html>

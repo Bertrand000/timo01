@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/template :: header(~{::title},~{::link},~{::style})">
+</head>
+<body>
+    <div class="layui-form timo-compile">
+    <form th:action="@{/gateway/video/save}">
+        <input type="hidden" name="id" th:if="${video}" th:value="${video.id}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="title" placeholder="请输入标题" th:value="${video?.title}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">视频资源</label>
+            <div class="layui-input-inline">
+                <input readonly="value" class="layui-input" type="text" name="uri" id="uri" placeholder="请上传视频" th:value="${video?.uri}" style="cursor:no-drop">
+            </div>
+            <button type="button" class="layui-btn" id="test1">
+                <i class="layui-icon">&#xe67c;</i>上传视频
+            </button>
+
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">视频封面</label>
+            <div class="layui-input-inline">
+                <input readonly="value" class="layui-input" type="text" name="cover" id="cover" placeholder="请上传图片" th:value="${video?.cover}" style="cursor:no-drop">
+            </div>
+            <button type="button" class="layui-btn" id="cover_btn">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">所属菜单</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="pid" placeholder="请输入所属菜单" th:value="${video?.pid}">
+            </div>
+        </div>
+<!--        <div class="layui-form-item">-->
+<!--            <label class="layui-form-label">视频类型</label>-->
+<!--            <div class="layui-input-inline">-->
+<!--                <input class="layui-input" type="text" name="type" placeholder="请输入视频类型" th:value="${video?.type}">-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序序号</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="sort" placeholder="请输入排序序号" th:value="${video?.sort}">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" class="layui-textarea" name="remark">[[${video?.remark}]]</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item timo-finally">
+            <button class="layui-btn ajax-submit"><i class="fa fa-check-circle"></i> 保存</button>
+            <button class="layui-btn btn-secondary close-popup"><i class="fa fa-times-circle"></i> 关闭</button>
+        </div>
+    </form>
+</div>
+<script th:replace="/common/template :: script"></script>
+    <script type="text/javascript" th:inline="javascript">
+        var contextpath = [[@{/}]]
+        layui.use('upload', function(){
+            var upload = layui.upload;
+
+            //执行实例
+            var uploadInst1 = upload.render({
+                elem: '#test1' //绑定元素
+                ,url: contextpath + '/gateway/video/uploadVideo' //上传接口
+                ,accept: 'video'
+                ,done: function(res){
+                    layer.msg(res.msg)
+                    if(res.status != 0) {
+                        document.getElementById("uri").value =res.data
+                    }
+                }
+                ,error: function(){
+                    //请求异常回调
+                }
+            });
+            //执行实例
+            var uploadInst2 = upload.render({
+                elem: '#cover_btn' //绑定元素
+                ,url: contextpath + '/gateway/video/uploadImage' //上传接口
+                ,done: function(res){
+                    layer.msg(res.msg)
+                    if(res.status != 0) {
+                        document.getElementById("cover").value =res.data
+                    }
+                }
+                ,error: function(){
+                    //请求异常回调
+                }
+            });
+        });
+    </script>
+</body>
+</html>

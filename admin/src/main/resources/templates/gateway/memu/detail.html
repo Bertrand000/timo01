@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/template :: header(~{::title},~{::link},~{::style})">
+</head>
+<body>
+    <div class="timo-detail-page">
+        <div class="timo-detail-title">基本信息</div>
+        <table class="layui-table timo-detail-table">
+            <colgroup>
+                <col width="100px"><col>
+                <col width="100px"><col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>主键ID</th>
+                    <td th:text="${memu.id}"></td>
+                    <th>菜单名</th>
+                    <td th:text="${memu.name}"></td>
+                </tr>
+                <tr>
+                    <th>菜单图标</th>
+                    <td th:text="${memu.imageUrl}"></td>
+                    <th>父级菜单id</th>
+                    <td th:text="${memu.pid}"></td>
+                </tr>
+                <tr>
+                    <th>别名</th>
+                    <td th:text="${memu.rickName}"></td>
+                    <th>排序序号</th>
+                    <td th:text="${memu.sort}"></td>
+                </tr>
+                <tr>
+                    <th>二级菜单样式</th>
+                    <td th:text="${memu.style}"></td>
+                    <th>二级菜单属性</th>
+                    <td th:text="${memu.attribute}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<script th:replace="/common/template :: script"></script>
+</body>
+</html>

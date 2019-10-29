@@ -32,6 +32,21 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.linln.modules</groupId>
+            <artifactId>newsManage</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.linln.modules</groupId>
+            <artifactId>gatway</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.linln.modules</groupId>
+            <artifactId>gateway</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.linln.component</groupId>
             <artifactId>shiro</artifactId>
             <version>${project.version}</version>
